@@ -50,7 +50,7 @@ export const Home: React.FC<HomeProps> = ({ client }) => {
           <i className="m-auto fa fa-arrow-left"></i>
         </button>
         <span>{page}</span>
-        <button onClick={() => handleChange(+1)} className='bg-slate-400 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded'>
+        <button role='incrementPage' onClick={() => handleChange(+1)} className='bg-slate-400 hover:bg-slate-500 text-white font-bold py-2 px-4 rounded'>
           <i className="m-auto fa fa-arrow-right"></i>
         </button>
       </div>

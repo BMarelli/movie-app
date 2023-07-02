@@ -34,7 +34,7 @@ describe('Home view', () => {
     });
   });
 
-  it('should render 20 new MoviesCard on click ">" button', async () => {
+  it('should render 20 new MoviesCard on click "->" button', async () => {
     const client = new Client("https://api.themoviedb.org/3");
     const response = require('../../test/movie-trending-multiple.json') as ApiResponse<MovieInfo[]>[];
     jest.spyOn(client, 'getMovies').mockImplementation(() => Promise.resolve(response[0].results));
@@ -50,7 +50,7 @@ describe('Home view', () => {
       const oldMovies = screen.getAllByRole('movieCard');
 
       jest.spyOn(client, 'getMovies').mockImplementation(() => Promise.resolve(response[1].results));
-      const button = screen.getByRole('button', { name: '>' });
+      const button = screen.getByRole('incrementPage');
       expect(button).toBeInTheDocument();
       await act(() => {
         button.click();
